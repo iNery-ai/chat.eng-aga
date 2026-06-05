@@ -118,6 +118,12 @@ body {
   align-items: center;
   height: 100%;
   flex: 1;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.content::-webkit-scrollbar {
+  display: none;
 }
 
 .brand-group {
@@ -366,6 +372,12 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 2;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.form-content::-webkit-scrollbar {
+  display: none;
 }
 
 /* Brand Mini Header */
