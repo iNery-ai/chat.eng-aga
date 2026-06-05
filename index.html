@@ -11,37 +11,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="device-frame-container">
-    <!-- Phone Mockup Frame -->
-    <div class="mobile-device">
-      <!-- Phone Notch / Dynamic Island -->
-      <div class="device-notch"></div>
-      
-      <!-- Phone Status Bar -->
-      <div class="status-bar">
-        <span class="status-time" id="currentTime">19:21</span>
-        <div class="status-icons">
-          <!-- Signal Icon -->
-          <svg class="status-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M2 22h20V2z" opacity="0.3"/>
-            <path d="M17 22h5V7z"/>
-          </svg>
-          <!-- Wifi Icon -->
-          <svg class="status-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 21l-12-12c4.4-4.4 11.6-4.4 16 0z" opacity="0.3"/>
-            <path d="M12 21l-9-9c3.3-3.3 8.7-3.3 12 0z"/>
-          </svg>
-          <!-- Battery Icon -->
-          <svg class="status-icon battery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="16" height="10" rx="2" ry="2"/>
-            <line x1="22" y1="11" x2="22" y2="13"/>
-            <rect class="battery-level" x="4" y="9" width="10" height="6" fill="currentColor" stroke="none"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- App Screen Content Container -->
-      <div class="app-screen">
+  <div class="app-container">
         
         <!-- 1. LANDING/WELCOME SCREEN (As seen in reference image) -->
         <div class="screen-view active" id="screenLanding">
@@ -50,7 +20,7 @@
             <div class="brand-group">
               <div class="logo-wrapper">
                 <div class="logo-box">
-                  <img src="/logo-AGA.png" alt="Logo AGA" class="logo-img">
+                  <img src="img/logo-AGA.png" alt="Logo AGA" class="logo-img">
                 </div>
               </div>
               <h1 class="title">CHAT ENG</h1>
@@ -100,7 +70,7 @@
 
           <div class="form-content">
             <div class="brand-mini">
-              <div class="logo-box-mini"><img src="/logo-AGA.png" alt="Logo AGA" class="logo-img-mini"></div>
+              <div class="logo-box-mini"><img src="img/logo-AGA.png" alt="Logo AGA" class="logo-img-mini"></div>
               <div class="brand-text">
                 <h2>CHAT ENG</h2>
                 <p>IA DA ENGENHARIA</p>
@@ -338,11 +308,6 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- Phone Home Indicator Bar -->
-      <div class="home-indicator"></div>
-    </div>
   </div>
 
   <!-- Toast Notification System -->
