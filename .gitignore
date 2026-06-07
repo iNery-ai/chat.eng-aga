@@ -1,0 +1,7 @@
+# Ignore backup directories created by the code editor/agent
+backup_antigravity/
+
+# Ignore local system files
+Thumbs.db
+Desktop.ini
+.DS_Store
