@@ -363,6 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
     chatHistory.innerHTML = `
       <div class="chat-intro" id="chatIntro">
         <div class="intro-welcome-card">
+          <div class="intro-welcome-logo" style="opacity: 0.2; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;">
+            <img src="logo-AGA.png" alt="Logo AGA" style="width: 120px; height: 120px; object-fit: contain;">
+          </div>
           <h2 class="welcome-title">Olá, ${currentUserName}!</h2>
         </div>
         
@@ -529,14 +532,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Actions bar event listeners
-  btnNewChat.addEventListener('click', () => {
-    renderWelcomeScreen();
-    // Reset file uploads
-    attachedFile = null;
-    attachmentPreview.classList.add('hidden');
-    fileAttach.value = '';
-    showToast('Novo chat com a Lorena iniciado.', 'info');
-  });
+  if (btnNewChat) {
+    btnNewChat.addEventListener('click', () => {
+      renderWelcomeScreen();
+      // Reset file uploads
+      attachedFile = null;
+      attachmentPreview.classList.add('hidden');
+      fileAttach.value = '';
+      showToast('Novo chat com a Lorena iniciado.', 'info');
+    });
+  }
 
   btnAttachDoc.addEventListener('click', () => {
     fileAttach.click();
@@ -608,10 +613,12 @@ document.addEventListener('DOMContentLoaded', () => {
         chatFooter.classList.remove('hidden');
         chatTitle.textContent = 'CHAT ENG';
         chatSubtitle.textContent = 'Inteligência da Engenharia';
+        if (btnNewChat) btnNewChat.classList.remove('hidden');
       } else if (target === 'licitacoes') {
         licitacoesBody.classList.remove('hidden');
         chatTitle.textContent = 'Licitações';
         chatSubtitle.textContent = 'Painel de Controle';
+        if (btnNewChat) btnNewChat.classList.add('hidden');
 
         // Reset sub-tabs to default (Dashboard)
         document.querySelectorAll('.lic-sub-tab').forEach(tab => tab.classList.remove('active'));
@@ -625,6 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
         acervoBody.classList.remove('hidden');
         chatTitle.textContent = 'Acervo Técnico';
         chatSubtitle.textContent = 'Meu Portfólio';
+        if (btnNewChat) btnNewChat.classList.add('hidden');
 
         // Reset sub-tabs to default (Meu Acervo)
         document.querySelectorAll('.acervo-sub-tab').forEach(tab => tab.classList.remove('active'));
@@ -1043,16 +1051,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Modify drawer logout to trigger drawer closing as well
-  const btnDrawerLogout = document.getElementById('btnDrawerLogout');
-  btnDrawerLogout.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeDrawer();
-    btnLogout.click(); // reuse existing logout flow
-  });
-
-  // --- Logout ---
-  btnLogout.addEventListener('click', () => {
+  // --- Logout Function ---
+  function performLogout() {
     navigateTo(screenChat, screenLanding, 'backward');
     currentUserName = "Usuário";
     renderWelcomeScreen();
@@ -1072,9 +1072,23 @@ document.addEventListener('DOMContentLoaded', () => {
     acervoBody.classList.add('hidden');
     chatTitle.textContent = 'CHAT ENG';
     chatSubtitle.textContent = 'Inteligência da Engenharia';
+    if (btnNewChat) btnNewChat.classList.remove('hidden');
 
     showToast('Sessão encerrada com sucesso.', 'info');
+  }
+
+  // Modify drawer logout to trigger drawer closing as well
+  const btnDrawerLogout = document.getElementById('btnDrawerLogout');
+  btnDrawerLogout.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeDrawer();
+    performLogout(); // reuse existing logout flow
   });
+
+  // --- Logout ---
+  if (btnLogout) {
+    btnLogout.addEventListener('click', performLogout);
+  }
 
   // --- Acervo & CREA stats synchronization ---
   const statsEngsElement = document.getElementById('statsEngs');
