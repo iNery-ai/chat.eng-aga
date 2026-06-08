@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CHAT ENG - A plataforma de inteligência artificial de engenharia para análise de editais, CAT, ART e acervo técnico." />
+  <title>CHAT ENG - Login</title>
+  <!-- Google Fonts for premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+        
+        <!-- 1. LANDING/WELCOME SCREEN (As seen in reference image) -->
+        <div class="screen-view active" id="screenLanding">
+          
+          <div class="content">
+            <div class="brand-group">
+              <div class="logo-wrapper">
+                <div class="logo-box">
+                  <img src="logo-AGA.png" alt="Logo AGA" class="logo-img">
+                </div>
+              </div>
+              <h1 class="title">CHAT ENG</h1>
+              <p class="subtitle">IA DA ENGENHARIA</p>
+            </div>
+
+            <div class="login-card">
+              <button class="btn btn-primary" id="btnGoToLogin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                  <polyline points="10 17 15 12 10 7"/>
+                  <line x1="15" y1="12" x2="3" y2="12"/>
+                </svg>
+                Entrar
+              </button>
+
+              <button class="btn btn-secondary" id="btnGoToRegister">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <line x1="19" y1="8" x2="19" y2="14"/>
+                  <line x1="16" y1="11" x2="22" y2="11"/>
+                </svg>
+                Cadastre-se
+              </button>
+
+              <div class="forgot-wrapper">
+                <div class="forgot-line"></div>
+                <a href="#" class="forgot-link" id="btnForgotPassword">Esqueci minha senha</a>
+                <div class="forgot-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. LOGIN FORM SCREEN -->
+        <div class="screen-view" id="screenLogin">
+          
+          <div class="header-nav">
+            <button class="btn-back" id="btnBackToLandingFromLogin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <span class="nav-title">Acesse sua conta</span>
+          </div>
+
+          <div class="form-content">
+            <div class="brand-mini">
+              <div class="logo-box-mini"><img src="logo-AGA.png" alt="Logo AGA" class="logo-img-mini"></div>
+              <div class="brand-text">
+                <h2>CHAT ENG</h2>
+                <p>IA DA ENGENHARIA</p>
+              </div>
+            </div>
+
+            <form id="formLogin" class="interactive-form">
+              <div class="input-group">
+                <label class="input-label" for="loginEmail">E-mail Corporativo</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </span>
+                  <input type="email" id="loginEmail" placeholder="exemplo@empresa.com.br" required />
+                </div>
+                <span class="error-msg" id="errorLoginEmail"></span>
+              </div>
+
+              <div class="input-group">
+                <div class="password-label-row">
+                  <label class="input-label" for="loginPassword">Senha de Acesso</label>
+                </div>
+                <div class="input-wrapper">
+                  <span class="input-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                  </span>
+                  <input type="password" id="loginPassword" placeholder="Digite sua senha" required />
+                  <button type="button" class="btn-toggle-password" tabindex="-1">
+                    <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </button>
+                </div>
+                <span class="error-msg" id="errorLoginPassword"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span class="btn-text">Entrar na Plataforma</span>
+                <span class="spinner hidden"></span>
+              </button>
+            </form>
+
+            <a href="#" class="forgot-password-link" id="linkForgotPasswordForm">Esqueceu sua senha?</a>
+
+            <div class="form-footer">
+              <p>Não tem uma conta? <a href="#" id="linkRegisterFromLogin">Cadastre-se</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. REGISTRATION FORM SCREEN -->
+        <div class="screen-view" id="screenRegister">
+          
+          <div class="header-nav">
+            <button class="btn-back" id="btnBackToLandingFromRegister">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <span class="nav-title">Criar nova conta</span>
+          </div>
+
+          <div class="form-content">
+            <form id="formRegister" class="interactive-form">
+              <div class="input-group">
+                <label class="input-label" for="regName">Nome Completo</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                  </span>
+                  <input type="text" id="regName" placeholder="Seu nome" required />
+                </div>
+                <span class="error-msg" id="errorRegName"></span>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="regEmail">E-mail Corporativo</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </span>
+                  <input type="email" id="regEmail" placeholder="seu-email@empresa.com.br" required />
+                </div>
+                <span class="error-msg" id="errorRegEmail"></span>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="regPassword">Criar Senha</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                  </span>
+                  <input type="password" id="regPassword" placeholder="Mínimo 8 caracteres" required />
+                  <button type="button" class="btn-toggle-password" tabindex="-1">
+                    <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </button>
+                </div>
+                <span class="error-msg" id="errorRegPassword"></span>
+              </div>
+
+              <div class="terms-row">
+                <input type="checkbox" id="regTerms" required />
+                <label for="regTerms">Eu concordo com os <a href="#">Termos de Uso</a> e <a href="#">Políticas de Privacidade</a>.</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span class="btn-text">Cadastrar e Iniciar</span>
+                <span class="spinner hidden"></span>
+              </button>
+            </form>
+
+            <div class="form-footer">
+              <p>Já tem uma conta? <a href="#" id="linkLoginFromRegister">Entrar</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.5. FORGOT PASSWORD SCREEN -->
+        <div class="screen-view" id="screenForgotPassword">
+          
+          <div class="header-nav">
+            <button class="btn-back" id="btnBackToLandingFromForgot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <span class="nav-title">Recuperar senha</span>
+          </div>
+
+          <div class="form-content">
+            <div class="brand-mini">
+              <div class="logo-box-mini"><img src="logo-AGA.png" alt="Logo AGA" class="logo-img-mini"></div>
+              <div class="brand-text">
+                <h2>CHAT ENG</h2>
+                <p>IA DA ENGENHARIA</p>
+              </div>
+            </div>
+
+            <form id="formForgotPassword" class="interactive-form">
+              <p class="form-instruction" style="font-size: 14.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 5px;">
+                Digite seu e-mail corporativo para receber as instruções de recuperação de senha.
+              </p>
+              <div class="input-group">
+                <label class="input-label" for="forgotEmail">E-mail Corporativo</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </span>
+                  <input type="email" id="forgotEmail" placeholder="exemplo@empresa.com.br" required />
+                </div>
+                <span class="error-msg" id="errorForgotEmail"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span class="btn-text">Enviar Instruções</span>
+                <span class="spinner hidden"></span>
+              </button>
+            </form>
+
+            <div class="form-footer">
+              <p>Lembrou a senha? <a href="#" id="linkLoginFromForgot">Entrar</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. MOCK SUCCESS & CHAT INTERFACE SCREEN -->
+        <div class="screen-view" id="screenChat">
+          <!-- Drawer Backdrop Overlay -->
+          <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+          <!-- Left Sliding Menu Drawer -->
+          <div class="menu-drawer" id="menuDrawer">
+            <div class="drawer-header">
+              <div class="drawer-logo-box">
+                <img src="logo-AGA.png" alt="Logo AGA" class="drawer-logo-img">
+              </div>
+              <div class="drawer-header-text">
+                <h3>CHAT ENG</h3>
+                <p>Inteligência da Engenharia</p>
+              </div>
+            </div>
+            <div class="drawer-menu-list">
+              <a href="#" class="drawer-item active" data-target="chat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Chat com a Lorena</span>
+              </a>
+              <a href="#" class="drawer-item" data-target="licitacoes">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span>Painel de Licitações</span>
+              </a>
+              <a href="#" class="drawer-item" data-target="acervo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span>Acervo Técnico</span>
+              </a>
+              <div class="drawer-divider"></div>
+              <a href="#" class="drawer-item logout-link" id="btnDrawerLogout">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Sair da Conta</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <button class="btn-menu-hamburger" type="button" title="Menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+            
+            <div class="logo-box-mini">
+              <img src="logo-AGA.png" alt="Logo AGA" class="logo-img-mini">
+            </div>
+            
+            <div class="chat-header-info">
+              <span class="chat-title">CHAT ENG</span>
+              <div class="chat-subtitle-row">
+                <span class="chat-subtitle">Inteligência da Engenharia</span>
+                <span class="online-status-indicator"></span>
+              </div>
+            </div>
+
+            <button class="btn-newchat-clean" id="btnNewChat" type="button" title="Novo Chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Chat History -->
+          <div class="chat-body" id="chatHistory">
+            <div class="chat-intro" id="chatIntro">
+              <div class="intro-welcome-card">
+                <div class="intro-welcome-logo" style="opacity: 0.2; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;">
+                  <img src="logo-AGA.png" alt="Logo AGA" style="width: 120px; height: 120px; object-fit: contain;">
+                </div>
+                <h2 class="welcome-title">Olá, Usuário!</h2>
+              </div>
+              
+              <div class="suggestion-grid-container">
+                <div class="suggestion-scroll">
+                  <div class="suggestion-chip" data-prompt="O que é CAT?">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      <path d="M12 8v4"/>
+                      <path d="M12 16h.01"/>
+                    </svg>
+                    <span>O que é CAT?</span>
+                  </div>
+                  <div class="suggestion-chip" data-prompt="Como emitir uma ART?">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                    </svg>
+                    <span>Como emitir uma ART?</span>
+                  </div>
+                  <div class="suggestion-chip" data-prompt="Analisar edital">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>Analisar edital</span>
+                  </div>
+                  <div class="suggestion-chip" data-prompt="Dúvida sobre CREA">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>Dúvida sobre CREA</span>
+                  </div>
+                  <div class="suggestion-chip" data-prompt="Organizar acervo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <span>Organizar acervo</span>
+                  </div>
+                  <div class="suggestion-chip" data-prompt="Habilitação técnica">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Habilitação técnica</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Licitações Dashboard Body -->
+          <div class="licitacoes-body hidden" id="licitacoesBody">
+            <div class="dashboard-header">
+              <h2>Painel de Licitações</h2>
+            </div>
+
+            <!-- Sub-tab scroll menu -->
+            <div class="lic-sub-tabs-wrapper">
+              <div class="lic-sub-scroll">
+                <div class="lic-sub-tab active" data-tab="dashboard">Dashboard</div>
+                <div class="lic-sub-tab" data-tab="recomendadas">Recomendadas</div>
+                <div class="lic-sub-tab" data-tab="pesquisar">Pesquisar</div>
+                <div class="lic-sub-tab" data-tab="filtros">Filtros</div>
+                <div class="lic-sub-tab" data-tab="relatorios">Relatórios</div>
+              </div>
+            </div>
+
+            <!-- Panel 1: Dashboard -->
+            <div class="lic-tab-panel" id="licTabDashboard">
+              <div class="lic-stats-grid">
+                <div class="stat-card">
+                  <span class="stat-value" id="statsLicitacoesTotal">3</span>
+                  <span class="stat-label">Monitoradas</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-value" id="statsLicitacoesRecomendadas">1</span>
+                  <span class="stat-label">Recomendadas</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-value" id="statsLicitacoesAptas">1</span>
+                  <span class="stat-label">Aptas (100%)</span>
+                </div>
+              </div>
+
+              <!-- Aproveitamento Progress visual -->
+              <div class="dashboard-card status-overview-card" style="margin-top: 14px;">
+                <h3 class="card-title" style="margin-bottom: 8px;">Aproveitamento da Empresa</h3>
+                <p style="font-size: 12.5px; color: #64748b; margin-bottom: 14px; font-weight: 500; text-shadow: none;">
+                  Taxa de habilitação com base no seu Acervo Técnico e ARTs ativas.
+                </p>
+                
+                <div class="progress-container-row" style="margin-bottom: 12px;">
+                  <div class="progress-bar-label-row" style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; text-shadow: none;">
+                    <span>Capacidade Civil</span>
+                    <span>85%</span>
+                  </div>
+                  <div class="progress-bar-bg" style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                    <div class="progress-bar-fill" style="width: 85%; height: 100%; background: #03258C; border-radius: 4px;"></div>
+                  </div>
+                </div>
+
+                <div class="progress-container-row" style="margin-bottom: 12px;">
+                  <div class="progress-bar-label-row" style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; text-shadow: none;">
+                    <span>Capacidade Elétrica</span>
+                    <span>70%</span>
+                  </div>
+                  <div class="progress-bar-bg" style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                    <div class="progress-bar-fill" style="width: 70%; height: 100%; background: #056CF2; border-radius: 4px;"></div>
+                  </div>
+                </div>
+
+                <div class="progress-container-row">
+                  <div class="progress-bar-label-row" style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; text-shadow: none;">
+                    <span>Saneamento & Hidráulica</span>
+                    <span>100%</span>
+                  </div>
+                  <div class="progress-bar-bg" style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                    <div class="progress-bar-fill" style="width: 100%; height: 100%; background: #22c55e; border-radius: 4px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2: Recommended Bids -->
+            <div class="lic-tab-panel hidden" id="licTabRecomendadas">
+              <div class="tab-panel-intro" style="font-size: 12.5px; color: #64748b; font-weight: 500; margin-bottom: 12px; text-shadow: none;">
+                Licitações que correspondem aos seus filtros de atuação e acervo de engenharia.
+              </div>
+              <div class="dashboard-list" id="recomendadasList">
+                <!-- Recommended bidding card 1 -->
+                <div class="dashboard-card licitacao-card recommended-card" data-org="Sabesp S.A.">
+                  <div class="card-header-row">
+                    <span class="card-org">Sabesp S.A.</span>
+                    <span class="badge" style="background: rgba(3, 37, 140, 0.08); color: #03258C; font-weight: 800;">95% Match</span>
+                  </div>
+                  <h3 class="card-title">Ampliação da Rede de Saneamento Zona Sul</h3>
+                  <div class="card-details">
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      Limite: 12/07/2026
+                    </span>
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                      Saneamento, Hidráulica
+                    </span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button class="btn-card-action btn-analisar-ia" data-prompt="Gere uma análise técnica detalhada do edital da Sabesp S.A. para Ampliação da Rede de Saneamento Zona Sul. Quais as exigências de CAT, ART e capacidade técnica?">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                      Analisar com Lorena
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Search Bids -->
+            <div class="lic-tab-panel hidden" id="licTabPesquisar">
+              <div class="search-filter-row" style="margin-bottom: 12px; display: flex; gap: 10px;">
+                <div class="search-wrapper" style="flex: 1;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input type="text" placeholder="Buscar editais..." id="searchLicitacoes">
+                </div>
+                <button class="btn-dashboard-action btn-add-licitacao" id="btnOpenAddLicitacao" style="flex-shrink: 0; padding: 0 14px; border-radius: 12px; height: 44px;" title="Novo Edital">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; margin: 0;">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="dashboard-list" id="licitacoesList">
+                <!-- Bidding Card 1 -->
+                <div class="dashboard-card licitacao-card" data-org="Secretaria de Saúde SP">
+                  <div class="card-header-row">
+                    <span class="card-org">Secretaria de Saúde SP</span>
+                    <span class="badge badge-success">Apto (100%)</span>
+                  </div>
+                  <h3 class="card-title">Construção do Novo Bloco Hospitalar</h3>
+                  <div class="card-details">
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      Limite: 25/06/2026
+                    </span>
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                      Civil, Elétrica
+                    </span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button class="btn-card-action btn-analisar-ia" data-prompt="Gere uma análise técnica detalhada do edital da Secretaria de Saúde SP para Construção do Novo Bloco Hospitalar. Quais as exigências de CAT, ART e capacidade técnica?">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                      Analisar com Lorena
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Bidding Card 2 -->
+                <div class="dashboard-card licitacao-card" data-org="Sabesp S.A.">
+                  <div class="card-header-row">
+                    <span class="card-org">Sabesp S.A.</span>
+                    <span class="badge badge-warning">Pendente Acervo</span>
+                  </div>
+                  <h3 class="card-title">Ampliação da Rede de Saneamento Zona Sul</h3>
+                  <div class="card-details">
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      Limite: 12/07/2026
+                    </span>
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                      Saneamento, Hidráulica
+                    </span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button class="btn-card-action btn-analisar-ia" data-prompt="Gere uma análise técnica detalhada do edital da Sabesp S.A. para Ampliação da Rede de Saneamento Zona Sul. Quais as exigências de CAT, ART e capacidade técnica?">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                      Analisar com Lorena
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Bidding Card 3 -->
+                <div class="dashboard-card licitacao-card" data-org="Prefeitura de Campinas">
+                  <div class="card-header-row">
+                    <span class="card-org">Prefeitura de Campinas</span>
+                    <span class="badge badge-danger">Risco Habilitação</span>
+                  </div>
+                  <h3 class="card-title">Reforma Geral e Climatização de Escolas</h3>
+                  <div class="card-details">
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      Limite: 18/06/2026
+                    </span>
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                      Civil, Climatização
+                    </span>
+                  </div>
+                  <div class="card-actions-row">
+                    <button class="btn-card-action btn-analisar-ia" data-prompt="Gere uma análise técnica detalhada do edital da Prefeitura de Campinas para Reforma Geral e Climatização de Escolas. Quais as exigências de CAT, ART e capacidade técnica?">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                      Analisar com Lorena
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 4: Register Filters -->
+            <div class="lic-tab-panel hidden" id="licTabFiltros">
+              <div class="dashboard-card">
+                <h3 class="card-title" style="margin-bottom: 12px;">Cadastrar Novo Filtro</h3>
+                <form id="formAddFilter" class="filter-form" style="display: flex; flex-direction: column; gap: 12px;">
+                  <div class="form-group">
+                    <label for="filterKeyword" style="font-size: 13px; font-weight: 700; color: #475569;">Palavra-chave ou Área Técnica</label>
+                    <input type="text" id="filterKeyword" placeholder="Ex: Saneamento, Hospitalar, Civil" style="height: 44px; border-radius: 10px; border: 1px solid #e2e8f0; padding: 0 12px; font-size: 16px; outline: none; color: #0f172a;" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="height: 44px; border-radius: 10px; font-size: 14px; font-weight: 700; margin-top: 4px; background: #03258C; color: #ffffff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">Salvar Filtro</button>
+                </form>
+              </div>
+
+              <div class="dashboard-card" style="margin-top: 14px;">
+                <h3 class="card-title" style="margin-bottom: 10px;">Filtros Ativos</h3>
+                <div class="filter-chips-list" id="filterChipsList" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                  <!-- Mock Chips -->
+                  <div class="filter-chip" data-val="saneamento" style="background: rgba(3, 37, 140, 0.08); border: 1px solid rgba(3, 37, 140, 0.15); border-radius: 16px; padding: 6px 12px; display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: #03258C;">
+                    <span>Saneamento</span>
+                    <button type="button" class="btn-remove-filter" style="background: none; border: none; color: #64748b; cursor: pointer; font-size: 14px; line-height: 1; font-weight: bold; margin-left: 2px;">&times;</button>
+                  </div>
+                  <div class="filter-chip" data-val="hospitalar" style="background: rgba(3, 37, 140, 0.08); border: 1px solid rgba(3, 37, 140, 0.15); border-radius: 16px; padding: 6px 12px; display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: #03258C;">
+                    <span>Hospitalar</span>
+                    <button type="button" class="btn-remove-filter" style="background: none; border: none; color: #64748b; cursor: pointer; font-size: 14px; line-height: 1; font-weight: bold; margin-left: 2px;">&times;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 5: My Reports -->
+            <div class="lic-tab-panel hidden" id="licTabRelatorios">
+              <div class="tab-panel-intro" style="font-size: 12.5px; color: #64748b; font-weight: 500; margin-bottom: 12px; text-shadow: none;">
+                Relatórios e auditorias gerados pela Lorena sobre seus editais.
+              </div>
+              <div class="dashboard-list" id="relatoriosList">
+                <!-- Report Card 1 -->
+                <div class="dashboard-card relatorio-card" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 14px 16px; border-left: 4px solid #03258C;">
+                  <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; padding-right: 10px;">
+                    <span class="card-org" style="font-size: 10.5px;">Sabesp S.A.</span>
+                    <h3 class="card-title" style="font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; text-shadow: none;">Análise Técnica Rede Saneamento</h3>
+                    <span style="font-size: 11px; color: #64748b; font-weight: 500;">Gerado em 06/06/2026</span>
+                  </div>
+                  <button class="btn-card-action btn-view-report" data-report-title="Sabesp S.A. - Ampliação da Rede Zona Sul" data-report-content="### Relatório de Auditoria Técnica - Sabesp S.A. <br><br>**1. Requisitos de Habilitação Encontrados:** <br>- Exigência de CAT registrada no CREA contendo execução de rede coletora de esgoto de no mínimo 5.000 metros.<br>- Exigência de ART de profissional de engenharia civil cadastrado no CREA regional.<br><br>**2. Avaliação de Aptidão da Empresa:**<br>- **Situação:** APTO. O acervo da empresa contém a CAT nº 120250912 referente à instalação de subestações e saneamento, satisfazendo plenamente as exigências da licitação.<br><br>**3. Recomendações:**<br>- Realizar o recolhimento das taxas de participação e anexar a certidão ativa do CREA-SP de regularidade profissional." style="flex-shrink: 0; padding: 8px 12px;">
+                    Ver PDF
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acervo Técnico Dashboard Body -->
+          <div class="acervo-body hidden" id="acervoBody">
+            <div class="dashboard-header">
+              <h2>Meu Acervo Técnico</h2>
+            </div>
+
+            <!-- Sub-tab scroll menu -->
+            <div class="acervo-sub-tabs-wrapper">
+              <div class="acervo-sub-scroll">
+                <div class="acervo-sub-tab active" data-tab="meu">Meu Acervo</div>
+                <div class="acervo-sub-tab" data-tab="gerenciador">Gerenciador</div>
+                <div class="acervo-sub-tab" data-tab="cadastrar">Cadastrar</div>
+              </div>
+            </div>
+
+            <!-- Panel 1: Meu Acervo -->
+            <div class="acervo-tab-panel" id="acervoTabMeu">
+              <div class="search-filter-row">
+                <div class="search-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input type="text" placeholder="Buscar certidões/ARTs..." id="searchAcervo">
+                </div>
+              </div>
+
+              <div class="dashboard-list" id="acervoList">
+                <!-- Acervo Card 1 -->
+                <div class="dashboard-card acervo-card">
+                  <div class="card-header-row">
+                    <span class="card-type font-weight-bold">CAT nº 2390/2025</span>
+                    <span class="badge badge-success">Aprovada e Ativa</span>
+                  </div>
+                  <h3 class="card-title">Reforma Geral Edifício Central (12.000m²)</h3>
+                  <div class="card-details">
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      Responsável: Eng. Marcos Silva
+                    </span>
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                      CREA-SP
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Acervo Card 2 -->
+                <div class="dashboard-card acervo-card">
+                  <div class="card-header-row">
+                    <span class="card-type font-weight-bold">ART nº 120250912</span>
+                    <span class="badge badge-info">Baixada</span>
+                  </div>
+                  <h3 class="card-title">Instalação de Subestação 500kVA</h3>
+                  <div class="card-details">
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      Responsável: Engª Roberta Costa
+                    </span>
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                      CREA-SP
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Acervo Card 3 -->
+                <div class="dashboard-card acervo-card">
+                  <div class="card-header-row">
+                    <span class="card-type font-weight-bold">CAT nº 1152/2024</span>
+                    <span class="badge badge-warning">Em Análise Vínculo</span>
+                  </div>
+                  <h3 class="card-title">Duplicação Rodovia BR-101 (Trecho Sul)</h3>
+                  <div class="card-details">
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      Responsável: Eng. Felipe Andrade
+                    </span>
+                    <span class="detail-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                      CREA-SC
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2: Gerenciador -->
+            <div class="acervo-tab-panel hidden" id="acervoTabGerenciador">
+              <!-- Stats grid -->
+              <div class="acervo-stats-grid">
+                <div class="stat-card">
+                  <span class="stat-value" id="statsCats">2</span>
+                  <span class="stat-label">CATs Ativas</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-value" id="statsArts">1</span>
+                  <span class="stat-label">ARTs Registradas</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-value" id="statsEngs">3</span>
+                  <span class="stat-label">Engenheiros</span>
+                </div>
+              </div>
+
+              <!-- Regional distribution analysis -->
+              <div class="dashboard-card status-overview-card" style="margin-top: 14px;">
+                <h3 class="card-title" style="margin-bottom: 8px;">Distribuição de Acervo (Regional)</h3>
+                <p style="font-size: 12.5px; color: #64748b; margin-bottom: 14px; font-weight: 500; text-shadow: none;">
+                  Porcentagem de documentos validados por CREA regional.
+                </p>
+                
+                <div id="creaStatsContainer">
+                  <div class="progress-container-row" style="margin-bottom: 12px;">
+                    <div class="progress-bar-label-row" style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; text-shadow: none;">
+                      <span>CREA-SP (São Paulo)</span>
+                      <span>66%</span>
+                    </div>
+                    <div class="progress-bar-bg" style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                      <div class="progress-bar-fill" style="width: 66%; height: 100%; background: #03258C; border-radius: 4px;"></div>
+                    </div>
+                  </div>
+
+                  <div class="progress-container-row" style="margin-bottom: 12px;">
+                    <div class="progress-bar-label-row" style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 4px; text-shadow: none;">
+                      <span>CREA-SC (Santa Catarina)</span>
+                      <span>34%</span>
+                    </div>
+                    <div class="progress-bar-bg" style="height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                      <div class="progress-bar-fill" style="width: 34%; height: 100%; background: #056CF2; border-radius: 4px;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: Cadastrar -->
+            <div class="acervo-tab-panel hidden" id="acervoTabCadastrar">
+              <div class="dashboard-card">
+                <h3 class="card-title" style="margin-bottom: 12px; text-shadow: none;">Cadastrar Novo Acervo</h3>
+                <form id="formAddAcervoInline" class="filter-form" style="display: flex; flex-direction: column; gap: 12px;">
+                  <div class="form-group">
+                    <label for="acervoTitleInline" style="font-size: 13px; font-weight: 700; color: #475569;">Descrição do Acervo / Obra</label>
+                    <input type="text" id="acervoTitleInline" placeholder="Ex: Construção de Prédio Comercial" style="height: 44px; border-radius: 10px; border: 1px solid #e2e8f0; padding: 0 12px; font-size: 16px; outline: none; color: #0f172a;" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="acervoNumInline" style="font-size: 13px; font-weight: 700; color: #475569;">Número da Certidão / CAT / ART</label>
+                    <input type="text" id="acervoNumInline" placeholder="Ex: CAT nº 1420/2026, ART nº 120250" style="height: 44px; border-radius: 10px; border: 1px solid #e2e8f0; padding: 0 12px; font-size: 16px; outline: none; color: #0f172a;" required>
+                  </div>
+                  <div class="form-group-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div class="form-group">
+                      <label for="acervoRespInline" style="font-size: 13px; font-weight: 700; color: #475569;">Engenheiro Responsável</label>
+                      <input type="text" id="acervoRespInline" placeholder="Ex: Eng. Marcos Silva" style="height: 44px; border-radius: 10px; border: 1px solid #e2e8f0; padding: 0 12px; font-size: 16px; outline: none; color: #0f172a;" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="acervoCreaInline" style="font-size: 13px; font-weight: 700; color: #475569;">CREA Regional</label>
+                      <input type="text" id="acervoCreaInline" placeholder="Ex: CREA-SP, CREA-RJ" style="height: 44px; border-radius: 10px; border: 1px solid #e2e8f0; padding: 0 12px; font-size: 16px; outline: none; color: #0f172a;" required>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="height: 44px; border-radius: 10px; font-size: 14px; font-weight: 700; margin-top: 4px; background: #03258C; color: #ffffff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">Cadastrar Documento</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal para Adicionar Edital -->
+          <div class="dashboard-modal hidden" id="modalAddLicitacao">
+            <div class="modal-overlay" id="overlayLicitacao"></div>
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>Cadastrar Novo Edital</h3>
+                <button class="btn-close-modal" id="btnCloseLicitacaoModal">&times;</button>
+              </div>
+              <form id="formAddLicitacao" class="modal-form">
+                <div class="form-group">
+                  <label for="licitacaoTitle">Título da Licitação / Objeto</label>
+                  <input type="text" id="licitacaoTitle" placeholder="Ex: Construção de Estação de Metrô" required>
+                </div>
+                <div class="form-group">
+                  <label for="licitacaoOrg">Órgão Licitante</label>
+                  <input type="text" id="licitacaoOrg" placeholder="Ex: Metro SP, Sabesp" required>
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label for="licitacaoDate">Data Limite</label>
+                    <input type="date" id="licitacaoDate" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="licitacaoTags">Tags/Áreas (Vírgula)</label>
+                    <input type="text" id="licitacaoTags" placeholder="Ex: Civil, Elétrica">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-modal-submit">Cadastrar Licitação</button>
+              </form>
+            </div>
+          </div>
+
+
+
+          <!-- Modal para Visualizar Relatório -->
+          <div class="dashboard-modal hidden" id="modalViewReport">
+            <div class="modal-overlay" id="overlayViewReport"></div>
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 id="modalReportTitle">Visualizar Relatório</h3>
+                <button class="btn-close-modal" id="btnCloseReportModal">&times;</button>
+              </div>
+              <div class="modal-body-scroll" id="modalReportBody" style="max-height: 350px; overflow-y: auto; font-size: 13.5px; color: #334155; line-height: 1.6; padding: 10px 0; font-weight: 500;">
+                <!-- Content injected dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input Area -->
+          <div class="chat-footer" id="chatFooter">
+            <div class="chat-attachment-preview hidden" id="attachmentPreview">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span class="attachment-name" id="attachmentName">documento.pdf</span>
+              <button class="btn-remove-attachment" id="btnRemoveAttachment" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="chat-input-row">
+              <button class="btn-attach-circular" id="btnAttachDoc" type="button" title="Anexar Documento">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+              <input type="file" id="fileAttach" style="display: none;" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.png,.jpg,.jpeg" />
+              
+              <div class="chat-input-field-wrapper">
+                <input type="text" id="chatInput" placeholder="Pergunte algo à Lorena..." />
+              </div>
+
+              <button class="btn-send-circular" id="btnSendMessage" type="button" title="Enviar Mensagem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
