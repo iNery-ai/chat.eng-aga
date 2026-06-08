@@ -1235,7 +1235,7 @@ body {
   left: 0;
   width: 280px;
   height: 100%;
-  background: #ffffff;
+  background: var(--light-blue);
   z-index: 1001;
   transform: translateX(-100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1299,7 +1299,7 @@ body {
   gap: 12px;
   padding: 12px 16px;
   border-radius: 12px;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 14.5px;
   font-weight: 600;
@@ -1308,39 +1308,39 @@ body {
 .drawer-item svg {
   width: 20px;
   height: 20px;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.65);
   transition: color 0.2s ease;
 }
 .drawer-item:hover {
-  background: #f1f5f9;
-  color: #03258C;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 .drawer-item:hover svg {
-  color: #03258C;
+  color: #ffffff;
 }
 .drawer-item.active {
-  background: rgba(3, 37, 140, 0.08);
-  color: #03258C;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 }
 .drawer-item.active svg {
-  color: #03258C;
+  color: #ffffff;
 }
 
 .drawer-divider {
   height: 1px;
-  background: #e2e8f0;
+  background: rgba(255, 255, 255, 0.15);
   margin: 10px 4px;
 }
 .drawer-item.logout-link {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   margin-top: auto;
 }
 .drawer-item.logout-link:hover {
-  background: #fef2f2;
-  color: #ef4444;
+  background: rgba(239, 68, 68, 0.2);
+  color: #fee2e2;
 }
 .drawer-item.logout-link:hover svg {
-  color: #ef4444;
+  color: #fee2e2;
 }
 
 /* Dashboard views */
